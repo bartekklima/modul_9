@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logowanie</title>
+</head>
+<body>
+ <form method="post" action="/login/">
+  <div class="container">
+    <label for="waluta"><b>waluta</b></label>
+    <select name="waluta">
+      {%for i in dane%}
+      <option value={i["bid"]}>{{i['currency']}}</option>
+      {%endfor%}
+    </select>
+    
+    <input type="text" placeholder="Enter Username" name="username" required>
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+    <button type="submit">Login</button>
+  </div>
+</form>
+</body>
+</html>
